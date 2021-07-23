@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <!-- External Menu -->
+        <add id="RLT_CustomPrice::rlt" title="RLT" module="RLT_CustomPrice"
+             sortOrder="10" resource="RLT_CustomPrice::RLT"/>
+        <!-- Inner Menu -->
+        <add id="RLT_CustomPrice::customprice" title="Custom Price" module="RLT_CustomPrice"
+             sortOrder="12" parent="RLT_CustomPrice::rlt"
+             action="specialprice/customprice/index"
+             resource="Magento_Catalog::products"/>
+    </menu>
+</config>

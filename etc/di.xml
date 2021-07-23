@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="specialprice_customprice_listing_data_source" xsi:type="string">SpecialPriceCollection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="SpecialPriceCollection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">rlt_customer_prices</argument>
+            <argument name="resourceModel" xsi:type="string">RLT\CustomPrice\Model\ResourceModel\SpecialPrice</argument>
+        </arguments>
+    </virtualType>
+    <preference for="RLT\CustomPrice\Api\SpecialPriceRepositoryInterface" type="RLT\CustomPrice\Model\SpecialPriceRepository"/>
+    <preference for="RLT\CustomPrice\Api\Data\SpecialPriceInterface" type="RLT\CustomPrice\Model\SpecialPrice"/>
+    <preference for="RLT\CustomPrice\Api\Data\SpecialPriceSearchResultInterface" type="Magento\Framework\Api\SearchResults"/>
+</config>

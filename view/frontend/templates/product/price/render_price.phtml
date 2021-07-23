@@ -1,0 +1,24 @@
+<?php
+/**
+ * @copyright Copyright © 2021 RLT. All rights reserved.
+ */
+
+/**
+ * @var \Magento\Framework\Pricing\Render\Amount $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+?>
+<span class="price-wrapper">
+<span id="special-price-<?= /** @escapeNotVerified */ $block->getSaleableItem()->getEntityId(); ?>" class="price"></span></span>
+<script type="text/x-magento-init">
+        {
+            "*": {
+                "RLT_CustomPrice/js/applyCustomerPrice": {
+                    "requestUrl": "<?= $escaper->escapeUrl($block->getUrl("/specialprice/product/price")) ?>",
+                    "ProductId" : "<?= /** @escapeNotVerified */ $block->getSaleableItem()->getEntityId() ?>",
+                    "OriginalPrice" : "<?= /** @escapeNotVerified */ $block->getDisplayValue() ?>",
+                    "OriginalSymbol": "<?= /** @escapeNotVerified */ $block->getDisplayCurrencySymbol() ?>"
+                }
+            }
+        }
+</script>
