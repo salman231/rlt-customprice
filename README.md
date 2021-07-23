@@ -47,7 +47,7 @@ Here are some of the salient features for the extension:
 
 5- Go to Admin Side and see the grid in RLTSquare->Custom Price menu for successful installation of module.
 
-#NOTES:
+# NOTES:
 
 - Custom price on storefront is handled by using an after plugin on getPrice method of Product.
   
@@ -55,7 +55,7 @@ Here are some of the salient features for the extension:
 
 - For handeling cache issues, the price of every product is fetched after sending a post request to fetch the price of product from database after discount calculations and then rendered on frontend using javascript.
 
-#Limitations - this module has limitation specified below
+# Limitations - this module has limitation specified below
  
 - Special Prices will work with only Simple product types.
 
