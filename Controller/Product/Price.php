@@ -1,6 +1,6 @@
 <?php
 /**
- * Price - Frontend Controller getting special price on ajax
+ * Price - Frontend Controller getting special price on ajax call
  *
  * @copyright Copyright © 2021 RLT. All rights reserved.
  */
@@ -9,7 +9,6 @@ namespace RLT\CustomPrice\Controller\Product;
 
 use Magento\Catalog\Api\ProductRepositoryInterface;
 use Magento\Customer\Model\SessionFactory;
-use Magento\Framework\App\Action\Context;
 use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\Controller\Result\JsonFactory;
@@ -49,7 +48,6 @@ class Price implements HttpPostActionInterface
     /**
      * Price constructor.
      * @param JsonFactory $resultJsonFactory
-     * @param Context $context
      * @param SpecialPriceRepositoryInterface $specialPriceRepository
      * @param ProductRepositoryInterface $productRepository
      * @param SessionFactory $sessionCustomer
@@ -57,7 +55,6 @@ class Price implements HttpPostActionInterface
      */
     public function __construct(
         JsonFactory $resultJsonFactory,
-        Context $context,
         SpecialPriceRepositoryInterface $specialPriceRepository,
         ProductRepositoryInterface $productRepository,
         SessionFactory $sessionCustomer,
@@ -114,7 +111,6 @@ class Price implements HttpPostActionInterface
                 "price" => $product->getPrice()
             ];
         }
-
         return $resultJson->setData($formattedResp);
     }
 }

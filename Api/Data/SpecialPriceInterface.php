@@ -31,9 +31,8 @@ interface SpecialPriceInterface
     public function getId();
 
     /**
-     * Set Row Id for entry
-     * @param mixed $value
-     * @return $this
+     * @param $row_id
+     * @return mixed
      */
     public function setId($row_id);
 

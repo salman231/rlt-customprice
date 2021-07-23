@@ -61,8 +61,7 @@ class SpecialPriceRepository implements SpecialPriceRepositoryInterface
     /**
      * @var SearchCriteriaBuilder
      */
-    private
-        $searchCriteriaBuilder;
+    private $searchCriteriaBuilder;
 
     /**
      * SpecialPriceRepository constructor.
@@ -134,11 +133,11 @@ class SpecialPriceRepository implements SpecialPriceRepositoryInterface
     }
 
     /**
-     * @param string $customerId
-     * @param string $productId |null
+     * @param $customerId
+     * @param string|null $productId
      * @return SpecialPriceSearchResultInterface|void
      */
-    public function getListByCustomer($customerId, $productId = null)
+    public function getListByCustomer($customerId, string $productId = null)
     {
         $this->searchCriteriaBuilder->addFilter(
             SpecialPriceInterface::CUSTOMER_ID,
@@ -173,7 +172,7 @@ class SpecialPriceRepository implements SpecialPriceRepositoryInterface
 
     /**
      * @param SearchCriteriaInterface $searchCriteria
-     * @return SpecialPriceSearchResultInterface|void
+     * @return SpecialPriceSearchResultInterface
      */
     public function getList(SearchCriteriaInterface $searchCriteria)
     {

@@ -39,18 +39,18 @@ class Product
     }
 
     /**
-     * @param \Magento\Catalog\Model\Product $product
+     * @param \Magento\Catalog\Model\Product $subject
      * @param $value
      * @return mixed
      */
     public function afterGetPrice(
-        \Magento\Catalog\Model\Product $product,
+        \Magento\Catalog\Model\Product $subject,
         $value
     ) {
         $customerId = $this->sessionCustomer->create()->getId();
 
         if ($customerId) {
-            $records = $this->specialPriceRepository->getListByCustomer($customerId, $product->getEntityId());
+            $records = $this->specialPriceRepository->getListByCustomer($customerId, $subject->getEntityId());
             $records = $records->getItems();
             if (count($records) > 0) {
                 $specialRecord = end($records);

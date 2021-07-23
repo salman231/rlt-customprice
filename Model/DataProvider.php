@@ -28,10 +28,12 @@ class DataProvider extends AbstractDataProvider
     protected $_request;
 
     /**
-     * @param string $name
-     * @param string $primaryFieldName
-     * @param string $requestFieldName
+     * DataProvider constructor.
+     * @param $name
+     * @param $primaryFieldName
+     * @param $requestFieldName
      * @param SpecialPriceCollectionFactory $collectionFactory
+     * @param RequestInterface $_request
      * @param array $meta
      * @param array $data
      */
